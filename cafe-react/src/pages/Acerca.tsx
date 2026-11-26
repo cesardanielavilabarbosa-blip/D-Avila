@@ -6,19 +6,8 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { Link } from 'react-router-dom';
 import '../styles/acerca.css';
-import useCart from '../hooks/useCart';
 import TeamModal from '../components/TeamModal';
 import Carousel from 'react-bootstrap/Carousel';
-
-// Mostrar una notificación breve en pantalla (sin dependencia externa)
-const showToast = (message: string, type: 'success' | 'error' = 'success') => {
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.innerHTML = `\n    <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i>\n    ${message}\n  `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 100);
-  setTimeout(() => { toast.classList.remove('show'); setTimeout(() => document.body.removeChild(toast), 300); }, 3000);
-};
 
 // Componente simple que delega el encabezado global
 const PageHeader: React.FC = () => <Header />;

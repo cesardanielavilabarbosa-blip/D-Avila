@@ -3,8 +3,8 @@
 import React, { useRef, useState } from 'react';
 import useCart from '../hooks/useCart';
 import { useAuth } from '../context/AuthContext';
-import { Dropdown, OverlayTrigger, Popover, Button, Overlay, Form, InputGroup } from 'react-bootstrap';
-import { useNavigate, NavLink, Link } from 'react-router-dom';
+import { Dropdown, Popover, Button, Overlay, Form, InputGroup } from 'react-bootstrap';
+import { NavLink, Link } from 'react-router-dom';
 import BootstrapLoginModal from './BootstrapLoginModal';
 // El header mantiene la estructura para que el CSS de página siga funcionando.
 const Header: React.FC = () => {
@@ -38,17 +38,8 @@ const Header: React.FC = () => {
   const [captchaInputInline, setCaptchaInputInline] = useState('');
 
   const toggleNav = () => setIsNavActive(s => !s);
-  const openAuthModal = (tab: 'login' | 'register' = 'login') => { setActiveAuthTab(tab); setIsModalOpen(true); };
-  const closeAuthModal = () => setIsModalOpen(false);
 
   const { logout, isAuthenticated, login } = useAuth();
-  const navigate = useNavigate();
-
-  const handleAuthSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // handler legado: abrir modal Bootstrap para autenticación
-    setIsModalOpen(true);
-  };
 
   const handleInlineLogin = (e?: React.FormEvent) => {
     if (e) e.preventDefault();

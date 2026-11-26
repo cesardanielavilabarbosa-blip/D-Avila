@@ -6,7 +6,6 @@ import { Form, Button } from 'react-bootstrap';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../styles/contacto.css';
-import useCart from '../hooks/useCart';
 import TeamModal from '../components/TeamModal';
 
 // función showToast para notificaciones breves
